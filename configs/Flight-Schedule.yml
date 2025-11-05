@@ -1,0 +1,19 @@
+---
+TRANSFORM:
+  drop_null: False
+  enable_datetime_conversion: true
+  datetime_columns:
+      - sta
+      - std
+
+SINK:
+- sink: postgresql
+  key_column: act_id
+  method: insert
+  host: 127.0.0.1
+  port: 5432
+  username: postgres
+  password: postgresJeff14
+  database: airport
+  schema: flight
+  table: flight_schedule

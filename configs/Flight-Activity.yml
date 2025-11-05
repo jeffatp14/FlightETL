@@ -1,0 +1,35 @@
+---
+TRANSFORM:
+  drop_full_null_rows: False
+  enable_datetime_conversion: True
+  datetime_columns:
+      - eta
+      - etd
+      - landing
+      - airborne
+      - checkin_open
+      - checkin_closed
+      - boardingstart
+      - boarding_finish
+      - chock_on
+      - chock_off
+      - pax_door_open
+      - pax_door_close
+      - unloading_start
+      - unloading_finish
+      - loading_start
+      - loading_finish
+  drop_duplicate:
+    -fl_id
+
+SINK:
+- sink: postgresql
+  key_column: fl_id
+  method: append
+  host: 127.0.0.1
+  port: 5432
+  username: postgres
+  password: postgresJeff14
+  database: airport
+  schema: flight
+  table: flight_activity

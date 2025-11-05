@@ -1,0 +1,5 @@
+.idea
+.venv
+.idea/misc.xml
+.idea/workspace.xml
+module/__pycache__/
