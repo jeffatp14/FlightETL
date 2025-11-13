@@ -12,4 +12,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the project files into container
 COPY . .
 
-ENTRYPOINT [ "python", "/opt/FlightETL/main.py" ]
+ENTRYPOINT [ "python3", "/opt/FlightETL/main.py" ]
